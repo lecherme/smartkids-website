@@ -34,9 +34,9 @@ export function Button(props: ButtonProps) {
 
   const variantClasses = {
     default:
-      "bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-blue-600/25",
+      "bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold shadow-lg hover:shadow-blue-500/30",
     outline:
-      "border border-slate-600 hover:border-slate-500 bg-transparent text-slate-300 hover:text-slate-100",
+      "border-2 border-slate-300 hover:border-blue-400 bg-transparent text-slate-100 hover:text-white font-medium",
     ghost: "bg-transparent hover:bg-slate-800/50 text-slate-300 hover:text-slate-100",
   };
 
