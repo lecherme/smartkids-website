@@ -49,19 +49,28 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
                 size="lg"
-                className="group px-8 py-4 text-lg font-semibold"
+                className="group px-8 py-4 text-lg font-semibold
+             bg-gradient-to-r from-blue-500 via-blue-600 to-cyan-600
+             hover:from-blue-600 hover:via-blue-700 hover:to-cyan-700
+             text-white shadow-xl hover:shadow-blue-500/40
+             transition-all duration-300"
                 href={`https://wa.me/${FOOTER.contact.whatsapp.replace(/[^\d]/g, '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 {HERO.cta}
-                <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                {/* <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" /> */}
               </Button>
 
               <Button
                 variant="outline"
                 size="lg"
-                className="px-8 py-4 text-lg"
+                className="px-8 py-4 text-lg
+                border border-white/20
+                bg-white/5 backdrop-blur-lg
+                text-white
+                hover:bg-white/10
+                transition-all duration-300"
                 href="#capabilities"
               >
                 查看案例
