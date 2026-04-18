@@ -17,11 +17,10 @@ export function GlassCard({
   return (
     <div
       className={cn(
-        "glass-card rounded-xl p-6 border border-slate-700/30",
-        "backdrop-blur-md bg-slate-800/20",
-        "transition-all duration-300",
+        "rounded-3xl p-8 bg-white/[0.01] border border-white/[0.05] backdrop-blur-xl border-t-white/10",
+        "transition-all duration-500",
         hoverEffect &&
-          "hover:scale-[1.02] hover:border-slate-500/50 hover:shadow-xl hover:shadow-blue-500/5",
+          "hover:scale-[1.02] hover:border-white/30 hover:shadow-2xl hover:shadow-purple-500/10",
         "animate-fade-in",
         className
       )}

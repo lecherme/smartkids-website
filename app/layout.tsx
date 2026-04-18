@@ -26,7 +26,7 @@ export default function RootLayout({
       className={`${notoSansSC.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-screen bg-slate-900 text-slate-100 font-sans">
+      <body className="min-h-screen bg-[#030303] text-zinc-400 font-sans">
         <LanguageProvider>
           <main className="flex-1">
             {children}

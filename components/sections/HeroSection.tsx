@@ -6,71 +6,84 @@ import { HERO, FOOTER } from "@/lib/constants";
 import { Globe, ChevronRight } from "lucide-react";
 
 export function HeroSection() {
-  return (
-    <section id="home" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900/95 to-blue-900/20" />
+  // Split headline into two parts
+  const headline = HERO.headline;
+  const firstLine = "驅動中小企業數字化轉型";
+  const secondLine = "的香港力量";
 
-      {/* Animated grid background */}
-      <div className="absolute inset-0 opacity-10">
+  return (
+    <section id="home" className="relative min-h-screen flex items-center justify-center py-24 md:py-32 section-transition ambient-bg from-purple-900/10 via-transparent to-transparent bg-[#030303] pointer-events-auto">
+
+      {/* Subtle grid overlay */}
+      {/* <div className="absolute inset-0 opacity-5 pointer-events-none select-none" style={{ pointerEvents: 'none' }}>
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.2) 1px, transparent 0)`,
-            backgroundSize: "40px 40px",
+            backgroundImage: `linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+                             linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)`,
+            backgroundSize: "50px 50px",
           }}
         />
-      </div>
+      </div> */}
 
-      <div className="relative container mx-auto px-4 py-20 md:py-32">
-        <div className="max-w-4xl mx-auto text-center">
-
-          {/* Main headline */}
+      <div className="relative container mx-auto px-6 z-20 pointer-events-none">
+        <div className="max-w-5xl mx-auto text-center">
+          {/* Badge - transparent stroke style */}
           <FadeIn delay={0.2}>
-            <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20">
-              <Globe className="w-4 h-4 text-blue-400" />
-              <span className="text-blue-400 text-sm font-medium">香港 · 大灣區 · 國際</span>
+            <div className="inline-flex items-center gap-2 mb-10 px-6 py-3 rounded-full border border-white/[0.05] bg-white/[0.01] backdrop-blur-xl border-t-white/10">
+              <Globe className="w-4 h-4 text-white" />
+              <span className="text-white text-sm font-medium tracking-wider">香港 · 大灣區 · 國際</span>
             </div>
           </FadeIn>
 
+          {/* Main headline - split into two lines */}
           <FadeIn delay={0.3} direction="up">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
-              {HERO.headline}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-8 leading-tight">
+              <div className="bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-400 bg-clip-text text-transparent">
+                {firstLine}
+              </div>
+              <div className="text-white mt-6 tracking-wide">
+                {secondLine}
+              </div>
             </h1>
           </FadeIn>
 
+          {/* Subheadline */}
           <FadeIn delay={0.5} direction="up">
-            <p className="text-xl md:text-2xl text-slate-300 mb-10 max-w-3xl mx-auto">
+            <p className="text-base md:text-lg text-zinc-500 mb-12 max-w-2xl mx-auto leading-relaxed tracking-wider font-light">
               {HERO.subheadline}
             </p>
           </FadeIn>
 
-          <FadeIn delay={0.7} direction="up">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          {/* CTA Buttons */}
+          <FadeIn delay={0.7} direction="up" className="relative z-50">
+            <div className="flex flex-col sm:flex-row gap-2 justify-center items-center">
+              {/* Primary CTA - Web3 gradient button */}
               <Button
+                variant="ghost"
                 size="lg"
-                className="group px-8 py-4 text-lg font-semibold
-             bg-gradient-to-r from-blue-500 via-blue-600 to-cyan-600
-             hover:from-blue-600 hover:via-blue-700 hover:to-cyan-700
-             text-white shadow-xl hover:shadow-blue-500/40
-             transition-all duration-300"
+                className="flex items-center justify-center min-w-[160px] h-12 px-6 text-lg font-semibold rounded-full cursor-pointer
+                  bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500
+                  text-white shadow-lg shadow-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/40
+                  transition-all duration-300 hover:scale-105 hover:drop-shadow-[0_0_20px_rgba(59,130,246,0.5)] group"
+                style={{ pointerEvents: 'auto', cursor: 'pointer' }}
                 href={`https://wa.me/${FOOTER.contact.whatsapp.replace(/[^\d]/g, '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 {HERO.cta}
-                {/* <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" /> */}
+                <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
 
+              {/* Secondary CTA - Glassmorphism button */}
               <Button
-                variant="outline"
+                variant="ghost"
                 size="lg"
-                className="px-8 py-4 text-lg
-                border border-white/20
-                bg-white/5 backdrop-blur-lg
-                text-white
-                hover:bg-white/10
-                transition-all duration-300"
+                className="flex items-center justify-center min-w-[160px] h-12 px-6 text-lg font-medium rounded-full cursor-pointer
+                  backdrop-blur-xl bg-white/[0.01] border border-white/[0.05] border-t-white/10 hover:bg-white/15 hover:border-white/40
+                  text-white hover:text-white
+                  transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 hover:drop-shadow-[0_0_15px_rgba(168,85,247,0.3)]"
+                style={{ pointerEvents: 'auto', cursor: 'pointer' }}
                 href="#capabilities"
               >
                 查看案例
@@ -79,22 +92,23 @@ export function HeroSection() {
           </FadeIn>
 
           {/* Stats */}
-          <FadeIn delay={1} direction="up">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 max-w-3xl mx-auto">
+          <FadeIn delay={1} direction="up" className="relative z-50">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-24 max-w-4xl mx-auto">
               {[
                 { value: "50+", label: "成功項目" },
                 { value: "100%", label: "客戶滿意度" },
                 { value: "24h", label: "響應時間" },
-                { value: "3+", label: "年行業經驗" },
+                { value: "10+", label: "年行業經驗" },
               ].map((stat, index) => (
                 <div
                   key={index}
-                  className="text-center p-4 rounded-xl bg-slate-800/30 border border-slate-700/50"
+                  className="text-center p-10 rounded-3xl backdrop-blur-xl bg-white/[0.01] border border-white/[0.05] border-t-white/10 hover:border-white/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/10"
+                  style={{ pointerEvents: 'auto', cursor: 'pointer' }}
                 >
-                  <div className="text-2xl md:text-3xl font-bold text-white mb-1">
+                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-slate-400 text-sm">{stat.label}</div>
+                  <div className="text-zinc-500 text-sm font-medium tracking-wide">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -102,16 +116,44 @@ export function HeroSection() {
         </div>
       </div>
 
+      {/* Ambient Lighting - Ultra-soft radial gradients */}
+      {/* <div className="absolute inset-0 overflow-hidden -z-10 pointer-events-none select-none" style={{ pointerEvents: 'none' }}>
+        {/* Large radial glow center */}
+        {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] bg-purple-900/10 rounded-full blur-[200px]" /> */}
+        {/* Purple glow bottom left */}
+        {/* <div className="absolute -bottom-60 -left-60 w-[800px] h-[800px] bg-purple-600/10 rounded-full blur-[180px]" /> */}
+        {/* Cyan glow bottom right */}
+        {/* <div className="absolute -bottom-60 -right-60 w-[800px] h-[800px] bg-cyan-500/10 rounded-full blur-[180px]" /> */}
+        {/* Top center subtle glow */}
+        {/* <div className="absolute top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[150px]" /> */}
+        {/* Core glow behind title - larger and softer */}
+        {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 rounded-full blur-[200px]" /> */}
+      {/* </div> */}
+
+      {/* Geometric wave line decoration */}
+      {/* <div className="absolute bottom-0 left-0 right-0 h-20 overflow-hidden -z-10 pointer-events-none select-none" style={{ pointerEvents: 'none' }}>
+        <div className="relative w-full h-full">
+          <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
+          <div
+            className="absolute bottom-2 left-0 right-0 h-6"
+            style={{
+              background: "linear-gradient(90deg, transparent 0%, rgba(168, 85, 247, 0.3) 20%, rgba(59, 130, 246, 0.3) 50%, rgba(34, 211, 238, 0.3) 80%, transparent 100%)",
+              clipPath: "polygon(0% 100%, 10% 60%, 20% 100%, 30% 40%, 40% 100%, 50% 20%, 60% 100%, 70% 60%, 80% 100%, 90% 30%, 100% 100%, 100% 100%, 0% 100%)"
+            }}
+          />
+        </div>
+      </div> */}
+
       {/* Scroll indicator */}
-      <FadeIn delay={1.5}>
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      {/* <FadeIn delay={1.5}>
+        <div className="absolute bottom-32 left-1/2 transform -translate-x-1/2 z-10 pointer-events-none select-none">
           <div className="animate-bounce">
-            <div className="w-6 h-10 border-2 border-slate-500 rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-slate-400 rounded-full mt-2" />
+            <div className="w-7 h-12 border-2 border-white/20 rounded-full flex justify-center backdrop-blur-xl">
+              <div className="w-1.5 h-4 bg-gradient-to-b from-purple-500 to-cyan-400 rounded-full mt-3" />
             </div>
           </div>
         </div>
-      </FadeIn>
+      </FadeIn> */}
     </section>
   );
 }

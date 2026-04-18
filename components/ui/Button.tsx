@@ -34,10 +34,10 @@ export function Button(props: ButtonProps) {
 
   const variantClasses = {
     default:
-      "bg-gradient-to-r from-blue-500 via-blue-600 to-cyan-600 hover:from-blue-600 hover:via-blue-700 hover:to-cyan-700 text-white font-semibold shadow-xl hover:shadow-blue-500/40",
+      "bg-primary hover:bg-primary/90 text-white font-semibold shadow-md hover:shadow-lg hover:shadow-primary/30",
     outline:
-      "border-[3px] border-blue-300 hover:border-cyan-300 bg-blue-300/5 hover:bg-blue-300/15 text-white font-medium shadow-lg hover:shadow-blue-300/30 ring-1 ring-blue-500/20 hover:ring-cyan-500/30",
-    ghost: "bg-transparent hover:bg-slate-800/50 text-slate-300 hover:text-slate-100",
+      "border border-primary/30 hover:border-primary/50 bg-transparent hover:bg-primary/5 text-foreground-primary font-medium",
+    ghost: "bg-transparent hover:bg-white/5 text-foreground-secondary hover:text-foreground-primary",
   };
 
   const sizeClasses = {
@@ -47,8 +47,8 @@ export function Button(props: ButtonProps) {
   };
 
   const commonClasses = cn(
-    "rounded-lg font-medium transition-all duration-300",
-    "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-slate-900",
+    "rounded-full font-medium transition-all duration-300",
+    "focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-white",
     "disabled:opacity-50 disabled:cursor-not-allowed",
     variantClasses[variant],
     sizeClasses[size],

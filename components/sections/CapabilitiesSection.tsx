@@ -23,16 +23,22 @@ const techIcons = [
 
 export function CapabilitiesSection() {
   return (
-    <section id="capabilities" className="py-20 md:py-32 bg-slate-900">
-      <div className="container mx-auto px-4">
+    <section id="capabilities" className="py-24 md:py-36 bg-[#030303] section-transition ambient-bg from-purple-900/10 via-transparent to-transparent">
+      {/* Ambient radial glow */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] bg-purple-900/10 rounded-full blur-[200px]" />
+        <div className="absolute -top-40 -left-40 w-[800px] h-[800px] bg-blue-500/5 rounded-full blur-[180px]" />
+        <div className="absolute -bottom-40 -right-40 w-[800px] h-[800px] bg-cyan-500/5 rounded-full blur-[180px]" />
+      </div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section header */}
-          <FadeIn direction="up">
+          <FadeIn direction="up" className="pointer-events-none">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-fuchsia-500 to-purple-400 bg-clip-text text-transparent">
                 技術能力與成功案例
               </h2>
-              <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              <p className="text-xl text-zinc-500 max-w-3xl mx-auto leading-relaxed">
                 掌握前沿技術棧，為各行業企業提供可靠的技術解決方案
               </p>
             </div>
@@ -41,7 +47,7 @@ export function CapabilitiesSection() {
           {/* Tech stack */}
           <FadeIn direction="up" delay={0.2}>
             <div className="mb-20">
-              <h3 className="text-2xl font-bold text-center mb-10">
+              <h3 className="text-2xl font-bold text-center mb-10 text-white">
                 技術棧
               </h3>
               <div className="flex flex-wrap justify-center gap-6 md:gap-10">
@@ -50,10 +56,10 @@ export function CapabilitiesSection() {
                     key={index}
                     className="group flex flex-col items-center"
                   >
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl bg-slate-800/50 border border-slate-700 flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110 group-hover:border-blue-500/50 group-hover:shadow-lg group-hover:shadow-blue-500/10">
-                      <Icon className="w-8 h-8 md:w-10 md:h-10 text-slate-300 group-hover:text-blue-400 transition-colors" />
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl bg-white/[0.01] border border-white/[0.05] backdrop-blur-xl border-t-white/10 flex items-center justify-center mb-3 transition-all duration-500 group-hover:scale-110 group-hover:border-purple-500/50 group-hover:shadow-2xl group-hover:shadow-purple-500/20">
+                      <Icon className="w-8 h-8 md:w-10 md:h-10 text-zinc-500 group-hover:text-purple-400 group-hover:drop-shadow-[0_0_10px_rgba(168,85,247,0.5)] transition-colors duration-500" />
                     </div>
-                    <span className="text-sm md:text-base text-slate-400 group-hover:text-slate-300 transition-colors">
+                    <span className="text-sm md:text-base text-zinc-500 group-hover:text-white transition-colors duration-500">
                       {name}
                     </span>
                   </div>
@@ -64,7 +70,7 @@ export function CapabilitiesSection() {
 
           {/* Case studies */}
           <FadeIn direction="up" delay={0.4}>
-            <h3 className="text-2xl font-bold text-center mb-10">
+            <h3 className="text-2xl font-bold text-center mb-10 text-white">
               成功案例
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -89,23 +95,21 @@ export function CapabilitiesSection() {
           {/* CTA */}
           <FadeIn direction="up" delay={0.8}>
             <div className="mt-20 text-center">
-              <div className="inline-block p-1 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-400">
-                <div className="bg-slate-900 rounded-xl px-8 py-4">
-                  <h3 className="text-xl font-bold text-white mb-2">
-                    您的項目，我們的專長
-                  </h3>
-                  <p className="text-slate-300 mb-4">
-                    無論您的需求是什麼，我們都能提供專業的解決方案
-                  </p>
-                  <a
-                    href={`https://wa.me/${FOOTER.contact.whatsapp.replace(/[^\d]/g, '')}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-6 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
-                  >
-                    開始合作諮詢
-                  </a>
-                </div>
+              <div className="inline-block rounded-3xl bg-white/[0.01] border border-white/[0.05] backdrop-blur-xl border-t-white/10 px-10 py-10 shadow-2xl">
+                <h3 className="text-xl font-bold text-white mb-2">
+                  您的項目，我們的專長
+                </h3>
+                <p className="text-zinc-400/50 mb-4">
+                  無論您的需求是什麼，我們都能提供專業的解決方案
+                </p>
+                <a
+                  href={`https://wa.me/${FOOTER.contact.whatsapp.replace(/[^\d]/g, '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
+                >
+                  開始合作諮詢
+                </a>
               </div>
             </div>
           </FadeIn>

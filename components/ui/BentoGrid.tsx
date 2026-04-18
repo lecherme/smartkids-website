@@ -42,9 +42,9 @@ export function BentoGridItem({
   return (
     <div
       className={cn(
-        "glass-card rounded-2xl p-6 border border-slate-700/50",
-        "transition-all duration-300 hover:scale-[1.02] hover:border-slate-500/50",
-        "hover:shadow-2xl hover:shadow-blue-500/10",
+        "glass-card rounded-2xl p-6 border border-white/10",
+        "transition-all duration-300 hover:scale-[1.02] hover:border-white/30",
+        "hover:shadow-2xl hover:shadow-primary/10",
         "animate-fade-in",
         spanClasses[span],
         className
