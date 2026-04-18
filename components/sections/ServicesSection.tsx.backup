@@ -1,0 +1,83 @@
+"use client";
+
+import { ServiceCard } from "@/components/ui/ServiceCard";
+import { FadeIn } from "@/components/animations/FadeIn";
+import { SERVICES } from "@/lib/constants";
+import { Globe, Smartphone, Settings, Users } from "lucide-react";
+
+const iconMap = {
+  Globe,
+  Smartphone,
+  Settings,
+  Users,
+};
+
+export function ServicesSection() {
+  return (
+    <section id="services" className="py-20 md:py-32 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
+          {/* Section header */}
+          <FadeIn direction="up">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+                核心服務
+              </h2>
+              <p className="text-xl text-foreground-secondary max-w-3xl mx-auto">
+                為企業提供全方位的數字化解決方案，從網站開發到中台定制，一站式服務
+              </p>
+            </div>
+          </FadeIn>
+
+          {/* Services grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {SERVICES.map((service: {title: string, description: string, icon: string}, index: number) => {
+              const Icon = iconMap[service.icon as keyof typeof iconMap];
+              return (
+                <FadeIn
+                  key={index}
+                  delay={0.1 * index}
+                  direction="up"
+                  className="h-full"
+                >
+                  <ServiceCard
+                    title={service.title}
+                    description={service.description}
+                    icon={Icon}
+                    delay={index * 100}
+                  />
+                </FadeIn>
+              );
+            })}
+          </div>
+
+          {/* Additional info */}
+          <FadeIn delay={0.5} direction="up">
+            <div className="mt-20 p-8 rounded-2xl glass-card">
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-foreground-primary mb-2">定制化</div>
+                  <p className="text-foreground-secondary">
+                    根據企業需求量身定制解決方案
+                  </p>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-foreground-primary mb-2">一站式</div>
+                  <p className="text-foreground-secondary">
+                    從諮詢、設計到開發、維護全程服務
+                  </p>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-foreground-primary mb-2">敏捷開發</div>
+                  <p className="text-foreground-secondary">
+                    快速迭代，及時響應市場變化
+                  </p>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </div>
+    </section>
+  );
+}
