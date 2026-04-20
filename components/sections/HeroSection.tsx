@@ -32,14 +32,14 @@ export function HeroSection() {
           <FadeIn delay={0.2}>
             <div className="inline-flex items-center gap-2 mb-10 px-6 py-3 rounded-full border border-white/[0.05] bg-white/[0.01] backdrop-blur-xl border-t-white/10">
               <Globe className="w-4 h-4 text-white" />
-              <span className="text-white text-sm font-medium tracking-wider">香港 · 大灣區 · 國際</span>
+              <span className="text-white text-sm font-normal tracking-wider">香港 · 大灣區 · 國際</span>
             </div>
           </FadeIn>
 
           {/* Main headline - split into two lines */}
           <FadeIn delay={0.3} direction="up">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-8 leading-tight">
-              <div className="bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-400 bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-display tracking-tighter mb-8 leading-tight">
+              <div className="bg-gradient-to-r from-[#FF1CF7] to-[#00F0FF] bg-clip-text text-transparent">
                 {firstLine}
               </div>
               <div className="text-white mt-6 tracking-wide">
@@ -50,22 +50,22 @@ export function HeroSection() {
 
           {/* Subheadline */}
           <FadeIn delay={0.5} direction="up">
-            <p className="text-base md:text-lg text-zinc-500 mb-12 max-w-2xl mx-auto leading-relaxed tracking-wider font-light">
+            <p className="text-2xl font-medium font-display text-white mb-12 max-w-2xl mx-auto">
               {HERO.subheadline}
             </p>
           </FadeIn>
 
           {/* CTA Buttons */}
           <FadeIn delay={0.7} direction="up" className="relative z-50">
-            <div className="flex flex-col sm:flex-row gap-2 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
               {/* Primary CTA - Web3 gradient button */}
               <Button
                 variant="ghost"
                 size="lg"
-                className="flex items-center justify-center min-w-[160px] h-12 px-6 text-lg font-semibold rounded-full cursor-pointer
-                  bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500
-                  text-white shadow-lg shadow-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/40
-                  transition-all duration-300 hover:scale-105 hover:drop-shadow-[0_0_20px_rgba(59,130,246,0.5)] group"
+                className="flex items-center justify-center min-w-[160px] h-[70px] px-6 text-lg font-medium rounded-full cursor-pointer
+                  bg-black text-white hover:bg-black
+                  [border:2px_solid_transparent] [background:linear-gradient(to_right,#000000,#000000)_padding-box,_linear-gradient(to_right,#FF33CC,#8844FF)_border-box]
+                  transition-all duration-300 hover:scale-105 group"
                 style={{ pointerEvents: 'auto', cursor: 'pointer' }}
                 href={`https://wa.me/${FOOTER.contact.whatsapp.replace(/[^\d]/g, '')}`}
                 target="_blank"
@@ -79,10 +79,9 @@ export function HeroSection() {
               <Button
                 variant="ghost"
                 size="lg"
-                className="flex items-center justify-center min-w-[160px] h-12 px-6 text-lg font-medium rounded-full cursor-pointer
-                  backdrop-blur-xl bg-white/[0.01] border border-white/[0.05] border-t-white/10 hover:bg-white/15 hover:border-white/40
-                  text-white hover:text-white
-                  transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 hover:drop-shadow-[0_0_15px_rgba(168,85,247,0.3)]"
+                className="flex items-center justify-center min-w-[160px] h-[70px] px-6 text-lg font-medium rounded-full cursor-pointer
+                  bg-black text-white border-2 border-white hover:bg-black
+                  transition-all duration-300 hover:scale-105"
                 style={{ pointerEvents: 'auto', cursor: 'pointer' }}
                 href="#capabilities"
               >
@@ -108,7 +107,7 @@ export function HeroSection() {
                   <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-zinc-500 text-sm font-medium tracking-wide">{stat.label}</div>
+                  <div className="text-white text-sm font-normal tracking-wide">{stat.label}</div>
                 </div>
               ))}
             </div>

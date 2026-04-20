@@ -17,7 +17,7 @@ export function MainLayout({ children }: MainLayoutProps) {
               <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
                 <span className="text-white font-bold text-lg">SK</span>
               </div>
-              <span className="text-2xl font-bold text-white tracking-tight">
+              <span className="text-2xl font-bold text-white tracking-tight font-display">
                 SmartKids<span className="text-primary">.</span>
               </span>
             </div>
@@ -34,10 +34,9 @@ export function MainLayout({ children }: MainLayoutProps) {
                   <a
                     key={item}
                     href={href}
-                    className="text-zinc-300 hover:text-white transition-colors text-sm font-medium relative group"
+                    className="text-white hover:text-white/80 transition-colors text-sm font-medium relative group"
                   >
                     {item}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
                   </a>
                 );
               })}
