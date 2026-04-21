@@ -57,7 +57,15 @@ export function Button(props: ButtonProps) {
   );
 
   if (isAnchorProps(props)) {
-    const { href, ...anchorProps } = props;
+    const {
+      href,
+      variant: _variant,
+      size: _size,
+      fullWidth: _fullWidth,
+      className: _className,
+      children: _children,
+      ...anchorProps
+    } = props;
     return (
       <a
         href={href}
@@ -69,7 +77,14 @@ export function Button(props: ButtonProps) {
     );
   }
 
-  const { ...buttonProps } = props;
+  const {
+    variant: _variant,
+    size: _size,
+    fullWidth: _fullWidth,
+    className: _className,
+    children: _children,
+    ...buttonProps
+  } = props;
   return (
     <button
       className={commonClasses}

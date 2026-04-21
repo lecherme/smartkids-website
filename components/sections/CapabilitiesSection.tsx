@@ -25,9 +25,12 @@ const techIcons = [
 
 export function CapabilitiesSection() {
   return (
-    <section id="capabilities" className="py-24 md:py-36 bg-[#030303] section-transition ambient-bg from-purple-900/10 via-transparent to-transparent">
+    <section
+      id="capabilities"
+      className="relative py-24 md:py-36 bg-[#030303] section-transition ambient-bg from-purple-900/10 via-transparent to-transparent overflow-hidden"
+    >
       {/* Ambient radial glow */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] bg-purple-900/10 rounded-full blur-[200px]" />
         <div className="absolute -top-40 -left-40 w-[800px] h-[800px] bg-blue-500/5 rounded-full blur-[180px]" />
         <div className="absolute -bottom-40 -right-40 w-[800px] h-[800px] bg-cyan-500/5 rounded-full blur-[180px]" />
