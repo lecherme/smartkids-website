@@ -92,10 +92,10 @@ export function HeroSection() {
           <FadeIn delay={1} direction="up" className="relative z-50">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-24 max-w-4xl mx-auto">
               {[
-                { value: "Next.js", label: "Web 與企業官網開發" },
-                { value: "AI", label: "客服與知識助手集成" },
-                { value: "Supabase", label: "自動化與數據工作流" },
-                { value: "HK / GBA", label: "香港與大灣區服務" },
+                { value: "50+", label: "成功項目" },
+                { value: "100%", label: "客戶滿意度" },
+                { value: "24h", label: "響應時間" },
+                { value: "10+", label: "年行業經驗" },
               ].map((stat, index) => (
                 <div
                   key={index}
