@@ -3,9 +3,9 @@ import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
 export const metadata: Metadata = {
-  title: "SmartKids Tech - 驅動中小企業數字化轉型的香港力量",
-  description: "香港科技公司，專注於為中小企業提供響應式網站開發、小程序生態方案、企業中台定制和全方位數字化支持服務。",
-  keywords: ["香港科技", "數字化轉型", "中小企業", "網站開發", "小程序", "企業中台"],
+  title: "SmartKids Tech - 為中小企業提供 AI-Native Web、AI 與自動化方案的香港技術團隊",
+  description: "總部位於香港的數位技術工作室，專注為大灣區中小企業提供 AI-Native Web 開發、小程序、AI 助手集成與自動化數據工作流服務。",
+  keywords: ["香港科技", "AI Native", "數位轉型", "中小企業", "Next.js", "AI 助手", "Supabase", "大灣區"],
 };
 
 export default function RootLayout({

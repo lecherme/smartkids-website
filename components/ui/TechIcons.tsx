@@ -39,6 +39,30 @@ export function VueIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+export function NextjsIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      {...props}
+    >
+      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.7" />
+      <path
+        fill="currentColor"
+        d="M8.2 15.9V8.1h1.26l4.1 5.43V8.1h1.25v7.8h-1.18L9.45 10.4v5.5H8.2Z"
+      />
+      <path
+        d="M14.55 15.2 17.45 19"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        opacity="0.65"
+      />
+    </svg>
+  );
+}
+
 export function SpringBootIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
@@ -75,6 +99,58 @@ export function SpringBootIcon(props: SVGProps<SVGSVGElement>) {
         strokeWidth="1.6"
         strokeLinecap="round"
         opacity="0.9"
+      />
+    </svg>
+  );
+}
+
+export function PythonIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        d="M12.2 2.5c-4.15 0-3.9 1.8-3.9 1.8v1.86h3.97v.56H6.72s-2.67-.3-2.67 3.9 2.33 4.05 2.33 4.05h1.39v-1.95s-.08-2.33 2.3-2.33h3.98s2.24.04 2.24-2.17V4.7s.34-2.2-4.09-2.2Zm-2.2 1.26a.78.78 0 1 1 0 1.56.78.78 0 0 1 0-1.56Z"
+      />
+      <path
+        fill="currentColor"
+        opacity="0.55"
+        d="M11.8 21.5c4.15 0 3.9-1.8 3.9-1.8v-1.86h-3.97v-.56h5.55s2.67.3 2.67-3.9-2.33-4.05-2.33-4.05h-1.39v1.95s.08 2.33-2.3 2.33h-3.98s-2.24-.04-2.24 2.17v3.53s-.34 2.2 4.09 2.2Zm2.2-1.26a.78.78 0 1 1 0-1.56.78.78 0 0 1 0 1.56Z"
+      />
+    </svg>
+  );
+}
+
+export function AiIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      {...props}
+    >
+      <path
+        d="M12 3v4.5M12 16.5V21M4.5 12H3m18 0h-1.5M6.7 6.7 5.64 5.64m12.72 12.72-1.06-1.06M17.3 6.7l1.06-1.06M6.7 17.3l-1.06 1.06"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <rect
+        x="7.5"
+        y="7.5"
+        width="9"
+        height="9"
+        rx="2.2"
+        stroke="currentColor"
+        strokeWidth="1.6"
+      />
+      <path
+        fill="currentColor"
+        d="M10 14.2 11.62 9.8h.78L14 14.2h-.98l-.3-.92h-1.46l-.31.92H10Zm1.52-1.73h.94l-.46-1.44-.48 1.44Zm3.16 1.73V9.8h.9v4.4h-.9Z"
       />
     </svg>
   );

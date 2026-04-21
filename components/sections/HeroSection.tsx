@@ -6,10 +6,8 @@ import { HERO, FOOTER } from "@/lib/constants";
 import { Globe, ChevronRight } from "lucide-react";
 
 export function HeroSection() {
-  // Split headline into two parts
-  const headline = HERO.headline;
-  const firstLine = "驅動中小企業數字化轉型";
-  const secondLine = "的香港力量";
+  const firstLine = "AI-Native Web";
+  const secondLine = "與企業自動化方案";
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center py-24 md:py-32 section-transition ambient-bg from-purple-900/10 via-transparent to-transparent bg-[#030303] pointer-events-auto">
@@ -32,7 +30,7 @@ export function HeroSection() {
           <FadeIn delay={0.2}>
             <div className="inline-flex items-center gap-2 mb-10 px-6 py-3 rounded-full border border-white/[0.05] bg-white/[0.01] backdrop-blur-xl border-t-white/10">
               <Globe className="w-4 h-4 text-white" />
-              <span className="text-white text-sm font-normal tracking-wider">香港 · 大灣區 · 國際</span>
+              <span className="text-white text-sm font-normal tracking-wider">香港 · 大灣區 · AI-Native</span>
             </div>
           </FadeIn>
 
@@ -94,10 +92,10 @@ export function HeroSection() {
           <FadeIn delay={1} direction="up" className="relative z-50">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-24 max-w-4xl mx-auto">
               {[
-                { value: "50+", label: "成功項目" },
-                { value: "100%", label: "客戶滿意度" },
-                { value: "24h", label: "響應時間" },
-                { value: "10+", label: "年行業經驗" },
+                { value: "Next.js", label: "Web 與企業官網開發" },
+                { value: "AI", label: "客服與知識助手集成" },
+                { value: "Supabase", label: "自動化與數據工作流" },
+                { value: "HK / GBA", label: "香港與大灣區服務" },
               ].map((stat, index) => (
                 <div
                   key={index}

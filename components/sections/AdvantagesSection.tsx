@@ -7,24 +7,24 @@ import { Building2, Shield, Zap, MapPin, Check, X } from "lucide-react";
 const advantageIcons = [Building2, Shield, Zap, MapPin];
 const comparisonRows = [
   {
-    label: "溝通方式",
-    smartkids: "透明同步，需求變更可快速對齊",
-    traditional: "多層傳遞，容易出現理解落差",
+    label: "交付速度",
+    smartkids: "以分階段方式推進需求、原型與上線，讓客戶更早看到可用成果",
+    traditional: "前期投入較多，客戶通常需要更久才能看到實際成果",
   },
   {
-    label: "合作模式",
-    smartkids: "靈活定價，按目標與階段調整",
-    traditional: "報價僵化，常伴隨隱藏費用",
+    label: "AI 能力",
+    smartkids: "可按業務需求集成 AI 客服、知識助手與自動化回覆能力",
+    traditional: "通常以傳統功能開發為主，AI 能力需要額外規劃與整合",
   },
   {
-    label: "技術能力",
-    smartkids: "現代技術棧，兼顧速度與可維護性",
-    traditional: "技術更新慢，長期成本偏高",
+    label: "成本結構",
+    smartkids: "以開發服務費加維護服務費模式合作，範圍與節奏更清晰",
+    traditional: "報價常偏重一次性交付，後續維護與變更安排較不靈活",
   },
   {
     label: "交付之後",
-    smartkids: "持續支持與優化，不是上線就結束",
-    traditional: "交付即結束，後續協作斷層明顯",
+    smartkids: "可持續提供維護、優化與標準化模組支持，不是上線就結束",
+    traditional: "交付後支援通常需要另行安排，後續優化節奏較不固定",
   },
 ];
 
@@ -46,7 +46,7 @@ export function AdvantagesSection() {
                 市場優勢
               </h2>
               <p className="text-xl text-zinc-500 max-w-3xl mx-auto leading-relaxed">
-                為什麼選擇SmartKids Tech？我們為您提供獨特的價值主張
+                以香港本地服務能力結合現代技術交付方式，為中小企業提供清晰、穩定且可持續的合作體驗。
               </p>
             </div>
           </FadeIn>
@@ -82,6 +82,59 @@ export function AdvantagesSection() {
             })}
           </div>
 
+          <FadeIn direction="up" delay={0.35}>
+            <div className="mb-20 rounded-3xl bg-white/[0.01] border border-white/[0.05] backdrop-blur-xl border-t-white/10 p-8 md:p-10 shadow-2xl">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold text-white mb-3">
+                  合作流程
+                </h3>
+                <p className="text-zinc-500 max-w-2xl mx-auto leading-relaxed">
+                  以清晰節奏推進項目，讓需求、交付與後續支持都有明確安排。
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                {[
+                  {
+                    step: "01",
+                    title: "需求梳理",
+                    description: "了解業務目標、使用場景與預算範圍。",
+                  },
+                  {
+                    step: "02",
+                    title: "原型確認",
+                    description: "先確認核心頁面、流程與功能優先級。",
+                  },
+                  {
+                    step: "03",
+                    title: "開發上線",
+                    description: "按階段完成開發、測試與正式部署。",
+                  },
+                  {
+                    step: "04",
+                    title: "維護優化",
+                    description: "根據使用情況持續維護與迭代調整。",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.step}
+                    className="rounded-2xl border border-white/[0.05] bg-black/20 p-5"
+                  >
+                    <div className="text-sm font-semibold text-purple-300 mb-2">
+                      {item.step}
+                    </div>
+                    <div className="text-lg font-semibold text-white mb-2">
+                      {item.title}
+                    </div>
+                    <p className="text-sm leading-relaxed text-zinc-500">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+
           {/* Comparison */}
           <FadeIn direction="up" delay={0.5}>
             <div className="relative overflow-hidden bg-white/[0.01] border border-white/[0.05] backdrop-blur-xl border-t-white/10 p-6 md:p-10 rounded-[2rem]">
@@ -90,7 +143,7 @@ export function AdvantagesSection() {
                   SmartKids vs 傳統外包
                 </h3>
                 <p className="text-zinc-400 max-w-2xl mx-auto leading-relaxed">
-                  不只是做得出來，而是從溝通、執行到後續支持，都更穩定也更省心。
+                  我們希望提供的是清晰的合作方式、穩定的交付節奏，以及可持續的後續支持。
                 </p>
               </div>
 
@@ -102,7 +155,7 @@ export function AdvantagesSection() {
                     </div>
                     <div>
                       <div className="text-lg font-semibold text-white">SmartKids</div>
-                      <div className="text-sm text-zinc-400">更透明、更靈活、更長期</div>
+                      <div className="text-sm text-zinc-400">透明協作，穩定交付，持續支持</div>
                     </div>
                   </div>
                   <div className="space-y-3">

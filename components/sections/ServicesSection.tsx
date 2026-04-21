@@ -32,7 +32,7 @@ export function ServicesSection() {
                 核心服務
               </h2>
               <p className="text-xl text-zinc-500 max-w-3xl mx-auto leading-relaxed">
-                為企業提供全方位的數字化解決方案，從網站開發到中台定制，一站式服務
+                聚焦 Web、小程序、AI 集成與自動化工作流，為中小企業提供實用而可持續的數位解決方案。
               </p>
             </div>
           </FadeIn>
@@ -64,21 +64,21 @@ export function ServicesSection() {
             <div className="mt-20 p-12 rounded-3xl bg-white/[0.01] border border-white/[0.05] backdrop-blur-xl border-t-white/10 shadow-2xl transition-all duration-500 hover:border-white/20 hover:shadow-2xl hover:shadow-purple-500/10">
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="text-center">
-                  <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 via-fuchsia-500 to-purple-400 bg-clip-text text-transparent mb-2">定制化</div>
+                  <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 via-fuchsia-500 to-purple-400 bg-clip-text text-transparent mb-2">現代技術棧</div>
                   <p className="text-zinc-500">
-                    根據企業需求量身定制解決方案
+                    以現代框架與工程流程，提升交付效率與後續可維護性
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 via-fuchsia-500 to-purple-400 bg-clip-text text-transparent mb-2">一站式</div>
+                  <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 via-fuchsia-500 to-purple-400 bg-clip-text text-transparent mb-2">敏捷交付</div>
                   <p className="text-zinc-500">
-                    從諮詢、設計到開發、維護全程服務
+                    以分階段方式推進需求、原型與上線，讓合作節奏更清晰
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 via-fuchsia-500 to-purple-400 bg-clip-text text-transparent mb-2">敏捷開發</div>
+                  <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 via-fuchsia-500 to-purple-400 bg-clip-text text-transparent mb-2">持續支持</div>
                   <p className="text-zinc-500">
-                    快速迭代，及時響應市場變化
+                    從開發到維護持續跟進，幫助系統穩定運行與逐步優化
                   </p>
                 </div>
               </div>

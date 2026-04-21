@@ -6,21 +6,21 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { CAPABILITIES, FOOTER } from "@/lib/constants";
 import { ChevronRight } from "lucide-react";
 import {
-  ReactIcon,
-  VueIcon,
-  SpringBootIcon,
+  NextjsIcon,
+  PythonIcon,
   CloudIcon,
   TypeScriptIcon,
   NodeIcon,
+  AiIcon,
 } from "@/components/ui/TechIcons";
 
 const techIcons = [
-  { Icon: ReactIcon, name: "React" },
-  { Icon: VueIcon, name: "Vue" },
-  { Icon: SpringBootIcon, name: "Spring Boot" },
+  { Icon: NextjsIcon, name: "Next.js" },
+  { Icon: PythonIcon, name: "Python" },
   { Icon: CloudIcon, name: "Azure" },
   { Icon: TypeScriptIcon, name: "TypeScript" },
   { Icon: NodeIcon, name: "Node.js" },
+  { Icon: AiIcon, name: "AI / RAG" },
 ];
 
 export function CapabilitiesSection() {
@@ -38,10 +38,13 @@ export function CapabilitiesSection() {
           <FadeIn direction="up" className="pointer-events-none">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-fuchsia-500 to-purple-400 bg-clip-text text-transparent">
-                技術能力與成功案例
+                技術能力與落地方案
               </h2>
               <p className="text-xl text-zinc-500 max-w-3xl mx-auto leading-relaxed">
-                掌握前沿技術棧，為各行業企業提供可靠的技術解決方案
+                以 AI-Native 技術棧與模組化實踐，幫助中小企業更穩定地完成從需求到上線。
+              </p>
+              <p className="text-base text-zinc-600 max-w-3xl mx-auto leading-relaxed mt-4">
+                其中 AI / RAG 方案可應用於企業知識問答、客服回覆與內部資料檢索，適合需要提升回應效率與資訊可用性的團隊。
               </p>
             </div>
           </FadeIn>
@@ -73,7 +76,7 @@ export function CapabilitiesSection() {
           {/* Case studies */}
           <FadeIn direction="up" delay={0.4}>
             <h3 className="text-2xl font-bold text-center mb-10 text-white">
-              成功案例
+              落地方案
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {CAPABILITIES.cases.map((caseStudy: {title: string, description: string, tags: readonly string[]}, index: number) => (
@@ -99,10 +102,10 @@ export function CapabilitiesSection() {
             <div className="mt-20 text-center">
               <div className="inline-block rounded-3xl bg-white/[0.01] border border-white/[0.05] backdrop-blur-xl border-t-white/10 px-10 py-10 shadow-2xl">
                 <h3 className="text-xl font-bold text-white mb-2">
-                  您的項目，我們的專長
+                  讓 AI 更快落地到您的業務
                 </h3>
                 <p className="text-zinc-400 mb-4">
-                  無論您的需求是什麼，我們都能提供專業的解決方案
+                  從官網、小程序到 AI 助手與自動化流程，我們會按實際需求提供合適的技術方案。
                 </p>
                 <Button
                   variant="ghost"
