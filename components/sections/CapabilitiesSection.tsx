@@ -1,8 +1,10 @@
 "use client";
 
 import { CaseCard } from "@/components/ui/CaseCard";
+import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { CAPABILITIES, FOOTER } from "@/lib/constants";
+import { ChevronRight } from "lucide-react";
 import {
   ReactIcon,
   VueIcon,
@@ -16,7 +18,7 @@ const techIcons = [
   { Icon: ReactIcon, name: "React" },
   { Icon: VueIcon, name: "Vue" },
   { Icon: SpringBootIcon, name: "Spring Boot" },
-  { Icon: CloudIcon, name: "Cloud" },
+  { Icon: CloudIcon, name: "Azure" },
   { Icon: TypeScriptIcon, name: "TypeScript" },
   { Icon: NodeIcon, name: "Node.js" },
 ];
@@ -99,17 +101,24 @@ export function CapabilitiesSection() {
                 <h3 className="text-xl font-bold text-white mb-2">
                   您的項目，我們的專長
                 </h3>
-                <p className="text-zinc-400/50 mb-4">
+                <p className="text-zinc-400 mb-4">
                   無論您的需求是什麼，我們都能提供專業的解決方案
                 </p>
-                <a
+                <Button
+                  variant="ghost"
+                  size="lg"
+                  className="mx-auto flex items-center justify-center min-w-[160px] h-[70px] px-6 text-lg font-medium rounded-full cursor-pointer
+                    bg-black text-white hover:bg-black
+                    [border:2px_solid_transparent] [background:linear-gradient(to_right,#000000,#000000)_padding-box,_linear-gradient(to_right,#FF33CC,#8844FF)_border-box]
+                    transition-all duration-300 hover:scale-105 group"
+                  style={{ pointerEvents: 'auto', cursor: 'pointer' }}
                   href={`https://wa.me/${FOOTER.contact.whatsapp.replace(/[^\d]/g, '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
                 >
                   開始合作諮詢
-                </a>
+                  <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </Button>
               </div>
             </div>
           </FadeIn>

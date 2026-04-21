@@ -2,9 +2,31 @@
 
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ADVANTAGES } from "@/lib/constants";
-import { Building2, Shield, Zap, MapPin } from "lucide-react";
+import { Building2, Shield, Zap, MapPin, Check, X } from "lucide-react";
 
 const advantageIcons = [Building2, Shield, Zap, MapPin];
+const comparisonRows = [
+  {
+    label: "溝通方式",
+    smartkids: "透明同步，需求變更可快速對齊",
+    traditional: "多層傳遞，容易出現理解落差",
+  },
+  {
+    label: "合作模式",
+    smartkids: "靈活定價，按目標與階段調整",
+    traditional: "報價僵化，常伴隨隱藏費用",
+  },
+  {
+    label: "技術能力",
+    smartkids: "現代技術棧，兼顧速度與可維護性",
+    traditional: "技術更新慢，長期成本偏高",
+  },
+  {
+    label: "交付之後",
+    smartkids: "持續支持與優化，不是上線就結束",
+    traditional: "交付即結束，後續協作斷層明顯",
+  },
+];
 
 export function AdvantagesSection() {
   return (
@@ -62,69 +84,68 @@ export function AdvantagesSection() {
 
           {/* Comparison */}
           <FadeIn direction="up" delay={0.5}>
-            <div className="bg-white/[0.01] border border-white/[0.05] backdrop-blur-xl border-t-white/10 p-10 rounded-3xl">
-              <h3 className="text-2xl font-bold text-center mb-8 bg-gradient-to-r from-purple-400 via-fuchsia-500 to-purple-400 bg-clip-text text-transparent">
-                SmartKids vs 傳統外包
-              </h3>
+            <div className="relative overflow-hidden bg-white/[0.01] border border-white/[0.05] backdrop-blur-xl border-t-white/10 p-6 md:p-10 rounded-[2rem]">
+              <div className="text-center mb-10">
+                <h3 className="text-2xl md:text-3xl font-bold mb-3 bg-gradient-to-r from-purple-400 via-fuchsia-500 to-purple-400 bg-clip-text text-transparent">
+                  SmartKids vs 傳統外包
+                </h3>
+                <p className="text-zinc-400 max-w-2xl mx-auto leading-relaxed">
+                  不只是做得出來，而是從溝通、執行到後續支持，都更穩定也更省心。
+                </p>
+              </div>
 
-              <div className="grid md:grid-cols-2 gap-8 items-stretch">
-                <div className="p-8 rounded-3xl bg-white/[0.01] border border-white/[0.05] backdrop-blur-xl border-t-white/10 flex flex-col">
-                  <div className="text-lg font-bold text-purple-400 mb-4 text-center">SmartKids</div>
-                  <div className="space-y-4 flex-1">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-cyan-500/10 flex items-center justify-center flex-shrink-0">
-                        <div className="w-4 h-4 rounded-full bg-cyan-500" />
-                      </div>
-                      <span className="font-medium text-zinc-200">透明溝通</span>
+              <div className="grid gap-5 md:grid-cols-2">
+                <div className="rounded-3xl border border-white/[0.05] bg-white/[0.01] backdrop-blur-xl border-t-white/10 p-6 md:p-7 shadow-2xl">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/[0.02] border border-white/[0.05]">
+                      <Check className="h-5 w-5 text-purple-300" />
                     </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-cyan-500/10 flex items-center justify-center flex-shrink-0">
-                        <div className="w-4 h-4 rounded-full bg-cyan-500" />
-                      </div>
-                      <span className="font-medium text-zinc-200">靈活定價</span>
+                    <div>
+                      <div className="text-lg font-semibold text-white">SmartKids</div>
+                      <div className="text-sm text-zinc-400">更透明、更靈活、更長期</div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-cyan-500/10 flex items-center justify-center flex-shrink-0">
-                        <div className="w-4 h-4 rounded-full bg-cyan-500" />
+                  </div>
+                  <div className="space-y-3">
+                    {comparisonRows.map((row) => (
+                      <div
+                        key={row.label}
+                        className="rounded-2xl border border-white/[0.05] bg-black/20 p-4"
+                      >
+                        <div className="text-sm font-medium text-purple-300 mb-2">
+                          {row.label}
+                        </div>
+                        <p className="text-base leading-relaxed text-zinc-100">
+                          {row.smartkids}
+                        </p>
                       </div>
-                      <span className="font-medium text-zinc-200">技術深度</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-cyan-500/10 flex items-center justify-center flex-shrink-0">
-                        <div className="w-4 h-4 rounded-full bg-cyan-500" />
-                      </div>
-                      <span className="font-medium text-zinc-200">持續支持</span>
-                    </div>
+                    ))}
                   </div>
                 </div>
 
-                <div className="p-8 rounded-3xl bg-white/[0.005] border border-white/[0.03] backdrop-blur-xl border-t-white/5 flex flex-col">
-                  <div className="text-lg font-bold text-zinc-500 mb-4 text-center">傳統外包</div>
-                  <div className="space-y-4 flex-1">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-orange-600/10 flex items-center justify-center flex-shrink-0">
-                        <div className="w-4 h-4 rounded-full bg-orange-600/50" />
-                      </div>
-                      <span className="font-medium text-zinc-500">溝通障礙</span>
+                <div className="rounded-3xl border border-white/[0.05] bg-white/[0.01] backdrop-blur-xl border-t-white/10 p-6 md:p-7 shadow-2xl">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/[0.04] border border-white/[0.06]">
+                      <X className="h-5 w-5 text-zinc-400" />
                     </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-orange-600/10 flex items-center justify-center flex-shrink-0">
-                        <div className="w-4 h-4 rounded-full bg-orange-600/50" />
-                      </div>
-                      <span className="font-medium text-zinc-500">隱藏費用</span>
+                    <div>
+                      <div className="text-lg font-semibold text-zinc-200">傳統外包</div>
+                      <div className="text-sm text-zinc-500">流程割裂，後期風險更高</div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-orange-600/10 flex items-center justify-center flex-shrink-0">
-                        <div className="w-4 h-4 rounded-full bg-orange-600/50" />
+                  </div>
+                  <div className="space-y-3">
+                    {comparisonRows.map((row) => (
+                      <div
+                        key={row.label}
+                        className="rounded-2xl border border-white/[0.05] bg-black/20 p-4"
+                      >
+                        <div className="text-sm font-medium text-zinc-500 mb-2">
+                          {row.label}
+                        </div>
+                        <p className="text-base leading-relaxed text-zinc-400">
+                          {row.traditional}
+                        </p>
                       </div>
-                      <span className="font-medium text-zinc-500">技術陳舊</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-orange-600/10 flex items-center justify-center flex-shrink-0">
-                        <div className="w-4 h-4 rounded-full bg-orange-600/50" />
-                      </div>
-                      <span className="font-medium text-zinc-500">交付即結束</span>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>

@@ -3,16 +3,13 @@
 import { ServiceCard } from "@/components/ui/ServiceCard";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { SERVICES } from "@/lib/constants";
-import { GlobeIcon } from "@/components/ui/icons/GlobeIcon";
-import { SmartphoneIcon } from "@/components/ui/icons/SmartphoneIcon";
-import { SettingsIcon } from "@/components/ui/icons/SettingsIcon";
-import { UsersIcon } from "@/components/ui/icons/UsersIcon";
+import { Globe, Smartphone, Settings2, Users } from "lucide-react";
 
 const iconMap = {
-  Globe: GlobeIcon,
-  Smartphone: SmartphoneIcon,
-  Settings: SettingsIcon,
-  Users: UsersIcon,
+  Globe,
+  Smartphone,
+  Settings: Settings2,
+  Users,
 };
 
 export function ServicesSection() {
@@ -64,7 +61,7 @@ export function ServicesSection() {
 
           {/* Additional info */}
           <FadeIn delay={0.5} direction="up">
-            <div className="mt-20 p-12 rounded-3xl bg-white/[0.01] border border-white/[0.05] backdrop-blur-xl border-t-white/10 shadow-2xl transition-all duration-500 hover:bg-white/10 hover:border-primary/30 hover:shadow-2xl hover:shadow-purple-500/10">
+            <div className="mt-20 p-12 rounded-3xl bg-white/[0.01] border border-white/[0.05] backdrop-blur-xl border-t-white/10 shadow-2xl transition-all duration-500 hover:border-white/20 hover:shadow-2xl hover:shadow-purple-500/10">
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="text-center">
                   <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 via-fuchsia-500 to-purple-400 bg-clip-text text-transparent mb-2">定制化</div>

@@ -1,13 +1,6 @@
 import type { Metadata } from "next";
-import { Noto_Sans_SC } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
-
-const notoSansSC = Noto_Sans_SC({
-  variable: "--font-noto-sans-sc",
-  subsets: ["latin", "cyrillic"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "SmartKids Tech - 驅動中小企業數字化轉型的香港力量",
@@ -23,7 +16,7 @@ export default function RootLayout({
   return (
     <html
       lang="zh-Hans"
-      className={`${notoSansSC.variable} h-full antialiased`}
+      className="h-full antialiased"
       suppressHydrationWarning
     >
       <body className="min-h-screen bg-[#030303] text-zinc-400 font-sans">

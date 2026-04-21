@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Button } from "@/components/ui/Button";
 import { FOOTER } from "@/lib/constants";
 
 interface MainLayoutProps {
@@ -14,11 +15,17 @@ export function MainLayout({ children }: MainLayoutProps) {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-white font-bold text-lg">SK</span>
+              <div className="relative flex h-11 w-11 items-center justify-center rounded-2xl border border-fuchsia-400/20 bg-black/40 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.32)]">
+                <div className="absolute inset-0 rounded-2xl bg-[linear-gradient(135deg,rgba(255,51,204,0.22),rgba(136,68,255,0.12),rgba(34,211,238,0.10))]" />
+                <div className="absolute -inset-px rounded-2xl bg-[radial-gradient(circle_at_top_left,rgba(255,79,216,0.40),transparent_45%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.24),transparent_50%)] opacity-90 blur-[6px]" />
+                <div className="absolute inset-[1px] rounded-[15px] border border-white/10" />
+                <div className="absolute inset-x-2 top-1 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent" />
+                <span className="relative bg-gradient-to-r from-white via-fuchsia-100 to-cyan-200 bg-clip-text text-transparent font-bold text-base tracking-tight drop-shadow-[0_0_10px_rgba(255,79,216,0.28)]">
+                  SK
+                </span>
               </div>
               <span className="text-2xl font-bold text-white tracking-tight font-display">
-                SmartKids<span className="text-primary">.</span>
+                SmartKids<span className="bg-gradient-to-r from-[#A970FF] via-[#8C7BFF] to-[#75D8FF] bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(140,123,255,0.28)]">.</span>
               </span>
             </div>
 
@@ -44,14 +51,20 @@ export function MainLayout({ children }: MainLayoutProps) {
 
             {/* CTA & Mobile Menu */}
             <div className="flex items-center gap-6">
-              <a
+              <Button
+                variant="ghost"
+                size="sm"
+                className="hidden sm:flex items-center justify-center h-11 px-5 text-sm font-medium rounded-full cursor-pointer
+                  border border-white/10 bg-white/[0.03] text-white shadow-[0_8px_24px_rgba(0,0,0,0.28)]
+                  backdrop-blur-xl
+                  transition-all duration-300
+                  hover:-translate-y-0.5 hover:border-fuchsia-400/40 hover:bg-white/[0.06] hover:shadow-[0_12px_30px_rgba(168,85,247,0.18)]"
                 href={`https://wa.me/${FOOTER.contact.whatsapp.replace(/[^\d]/g, '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-1.5 rounded-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white font-semibold text-sm shadow-lg hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
               >
                 立即諮詢
-              </a>
+              </Button>
 
               <button className="lg:hidden p-3 rounded-full hover:bg-white/5 transition-colors">
                 <div className="w-6 h-0.5 bg-zinc-300 mb-1.5" />

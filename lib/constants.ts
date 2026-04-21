@@ -42,7 +42,7 @@ export const SERVICES = [
 ] as const;
 
 export const CAPABILITIES = {
-  techStack: ["React", "Vue", "Spring Boot", "Cloud", "TypeScript", "Node.js"],
+  techStack: ["React", "Vue", "Spring Boot", "Azure", "TypeScript", "Node.js"],
   cases: [
     {
       title: "退休計算器小程序",

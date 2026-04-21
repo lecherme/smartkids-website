@@ -31,7 +31,7 @@ export function FooterSection() {
                 <div className="space-y-4">
                   <a
                     href={`tel:${FOOTER.contact.phone}`}
-                    className="flex items-center gap-3 text-zinc-500 hover:text-white transition-colors group"
+                    className="flex items-center gap-3 rounded-3xl border border-white/[0.05] bg-white/[0.01] px-5 py-4 text-zinc-500 hover:text-white transition-all duration-300 group hover:border-white/20 hover:shadow-2xl hover:shadow-purple-500/10"
                   >
                     <div className="w-12 h-12 rounded-full bg-white/[0.01] border border-white/[0.05] backdrop-blur-xl border-t-white/10 flex items-center justify-center group-hover:border-purple-500/50 transition-all">
                       <Phone className="w-5 h-5 text-purple-400" />
@@ -44,7 +44,7 @@ export function FooterSection() {
 
                   <a
                     href={`https://wa.me/${FOOTER.contact.whatsapp.replace(/[^\d]/g, '')}`}
-                    className="flex items-center gap-3 text-zinc-500 hover:text-white transition-colors group"
+                    className="flex items-center gap-3 rounded-3xl border border-white/[0.05] bg-white/[0.01] px-5 py-4 text-zinc-500 hover:text-white transition-all duration-300 group hover:border-white/20 hover:shadow-2xl hover:shadow-purple-500/10"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -58,7 +58,7 @@ export function FooterSection() {
 
                   <a
                     href={`mailto:${FOOTER.contact.email}`}
-                    className="flex items-center gap-3 text-zinc-500 hover:text-white transition-colors group"
+                    className="flex items-center gap-3 rounded-3xl border border-white/[0.05] bg-white/[0.01] px-5 py-4 text-zinc-500 hover:text-white transition-all duration-300 group hover:border-white/20 hover:shadow-2xl hover:shadow-purple-500/10"
                   >
                     <div className="w-12 h-12 rounded-full bg-white/[0.01] border border-white/[0.05] backdrop-blur-xl border-t-white/10 flex items-center justify-center group-hover:border-purple-500/50 transition-all">
                       <Mail className="w-5 h-5 text-purple-400" />
@@ -79,26 +79,26 @@ export function FooterSection() {
                   辦公地點
                 </h3>
 
-                <div className="space-y-6">
-                  <div className="flex items-start gap-3">
-                    <div className="w-12 h-12 rounded-full bg-white/[0.01] border border-white/[0.05] backdrop-blur-xl border-t-white/10 flex items-center justify-center mt-1">
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3 rounded-3xl border border-white/[0.05] bg-white/[0.01] px-5 py-4 text-zinc-500 hover:text-white transition-all duration-300 group hover:border-white/20 hover:shadow-2xl hover:shadow-purple-500/10">
+                    <div className="w-12 h-12 rounded-full bg-white/[0.01] border border-white/[0.05] backdrop-blur-xl border-t-white/10 flex items-center justify-center mt-1 group-hover:border-purple-500/50 transition-all">
                       <MapPin className="w-5 h-5 text-purple-400" />
                     </div>
                     <div>
                       <div className="font-medium text-white mb-1">香港辦公室</div>
-                      <p className="text-zinc-500 text-sm">
+                      <p className="text-sm">
                         {FOOTER.contact.hkOffice}
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <div className="w-12 h-12 rounded-full bg-white/[0.01] border border-white/[0.05] backdrop-blur-xl border-t-white/10 flex items-center justify-center mt-1">
+                  <div className="flex items-start gap-3 rounded-3xl border border-white/[0.05] bg-white/[0.01] px-5 py-4 text-zinc-500 hover:text-white transition-all duration-300 group hover:border-white/20 hover:shadow-2xl hover:shadow-purple-500/10">
+                    <div className="w-12 h-12 rounded-full bg-white/[0.01] border border-white/[0.05] backdrop-blur-xl border-t-white/10 flex items-center justify-center mt-1 group-hover:border-purple-500/50 transition-all">
                       <MapPin className="w-5 h-5 text-purple-400" />
                     </div>
                     <div>
                       <div className="font-medium text-white mb-1">內地聯絡處</div>
-                      <p className="text-zinc-500 text-sm">
+                      <p className="text-sm">
                         {FOOTER.contact.mainlandContact}
                       </p>
                     </div>
